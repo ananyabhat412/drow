@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Drowsiness Detection Online</title>
+
     <link rel="stylesheet" href="/static/style.css">
 
-    <!-- Mediapipe + Camera Utils -->
+    <!-- Mediapipe -->
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
 </head>
 
 <body>
-    <h1>Drowsiness Detection (Online Version)</h1>
 
-    <div id="container">
+    <h1 class="title">Drowsiness Detection</h1>
+
+    <div class="video-box">
+        <!-- Hidden video (internal use only) -->
         <video id="video" autoplay playsinline></video>
+
+        <!-- Only this canvas is visible -->
         <canvas id="canvas"></canvas>
     </div>
 
-    <h2 id="status">Status: Awake 😃</h2>
-    <h2 id="ear">EAR: --</h2>
+    <div class="info-panel">
+        <p id="status" class="status-pill awake">Awake 😃</p>
+        <p id="ear" class="ear-value">EAR: --</p>
+    </div>
 
     <audio id="beep" src="/static/beep.mp3"></audio>
 

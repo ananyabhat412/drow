@@ -1,18 +1,83 @@
 body {
-    background-color: #0e1117;
-    color: #58a6ff;
+    background: #0d1117;
+    color: #c9d1d9;
+    font-family: "Segoe UI", sans-serif;
     text-align: center;
-    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin: 0;
 }
 
-#container {
-    margin: auto;
-    width: 700px;
+.title {
+    font-size: 32px;
+    color: #58a6ff;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.video-box {
     position: relative;
+    width: 80%;
+    max-width: 720px;
+    margin: auto;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(88, 166, 255, 0.4);
+    background: #111827;
 }
 
-video, canvas {
-    width: 700px;
-    height: 500px;
-    border-radius: 12px;
+/* Hide raw video completely */
+#video {
+    display: none;
+}
+
+/* Canvas is the only visible video feed */
+canvas {
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+}
+
+.info-panel {
+    margin-top: 25px;
+}
+
+.status-pill {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.awake {
+    background: rgba(0, 200, 0, 0.15);
+    border: 2px solid #00ff00;
+    color: #00ff88;
+}
+
+.drowsy {
+    background: rgba(255, 0, 0, 0.15);
+    border: 2px solid #ff4444;
+    color: #ff6666;
+    animation: pulse 0.8s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    }
+    to {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
+    }
+}
+
+.ear-value {
+    font-size: 22px;
+    color: #58a6ff;
+    margin-top: 10px;
+    font-weight: 500;
 }
