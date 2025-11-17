@@ -1,5 +1,2 @@
 flask
-opencv-python-headless
-mediapipe
-numpy
 gunicorn
